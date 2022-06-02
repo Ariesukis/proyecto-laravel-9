@@ -10,5 +10,13 @@
 
     <h1>Eventos</h1>
     
+    <ol>
+        @foreach($categories as $category)
+            <li>
+                {{ $category->name }}
+            </li>
+        @endforeach
+    </ol>    
+
 </body>
 </html>
