@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,17 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-/*Route::get('/', function () {
+/*
+Route::get('/', function () {
     return view('welcome');
 });
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/categorias', [EventCategoryController::class, 'index']);
+
+Route::get('/nosotros', function () {
+    return view('nosotros');
+});
 
