@@ -11,6 +11,10 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         //dd ($categories);
+
+        // eventos -> una categoria
+        // categoria -> muchos eventos
+
         return view('events', ['categories' => $categories]);
     }
 }
