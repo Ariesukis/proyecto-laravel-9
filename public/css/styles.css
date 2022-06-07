@@ -1,0 +1,79 @@
+.btn-primary-yellow {
+  background-color: #5B5EA6;
+  color: #000 !important;
+}
+
+.rounded-12 {
+  border-radius: 12px !important;
+}
+
+.fa-filter {
+  color: #5B5EA6;
+}
+
+html {
+  font-size: 1rem;
+}
+html body {
+  background-color: #161518;
+  font-family: "Poppins", sans-serif;
+}
+html body header .title span {
+  font-weight: 400;
+  color: #5B5EA6;
+}
+html body header .title p {
+  font-weight: 600;
+  text-decoration: underline;
+}
+html body header .banner-container {
+  position: relative;
+}
+html body header .banner-container .banner-image {
+  width: 100%;
+}
+html body header .banner-container .text-block {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+html body header .banner-container .text-block .text-block-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+html body header .banner-container .text-block .text-block-subtitle {
+  font-weight: 600;
+  font-size: 1rem;
+}
+html body header .banner-container .text-block .text-block-p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+html body main .event {
+  position: relative;
+}
+html body main .event .banner-image {
+  width: 100%;
+}
+html body main .event .text-block {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+html body main .event .text-block .text-block-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+html body main .event .text-block .text-block-subtitle {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+html body main .event .text-block .text-block-p {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+html body footer {
+  background-color: #333333;
+}
