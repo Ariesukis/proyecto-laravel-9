@@ -21,11 +21,17 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
+//Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/categorias', [EventCategoryController::class, 'index']);
 
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
+
+
 
