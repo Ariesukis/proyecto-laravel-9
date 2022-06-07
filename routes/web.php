@@ -26,7 +26,11 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('admin/events', [EventController::class, 'index']);
+
+Route::get('admin/events', [EventController::class, 'index']) -> name('events.index');
+Route::get('admin/events/create', [EventController::class, 'create']) -> name('events.create');
+
+Route::post('admin/events/save', [EventController::class, 'save']) -> name('events.save');
 
 //Route::get('/', [HomeController::class, 'index']);
 

@@ -253,12 +253,12 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
+        ['header' => 'Administrar Eventos'],
+        [
+            'text' => 'Crear Evento',
+            'url'  => 'admin/events/create',
+            'icon' => 'fas fa-fw fa-calendar-plus',
+        ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

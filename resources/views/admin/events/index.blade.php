@@ -33,7 +33,7 @@
                         <tr>
                             <td>{{$event->title}}</td>
                             <td>
-                                <img src="{{$event->img_banner}}" alt="" width="150px">
+                                <img src="/images/uploads/events/{{$event->img_banner}}" alt="" width="150px">
                             </td>
                             <td>{{$event->date_event}}</td>
                             <td>{{$event->place_event}}</td>
