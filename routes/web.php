@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,18 @@ Route::get('admin/events/{id}/edit/', [EventController::class, 'edit']) -> name(
 Route::post('admin/events/{id}/update', [EventController::class, 'update']) -> name('events.update');
 Route::post('admin/events/{id}/delete', [EventController::class, 'delete']) -> name('events.delete');
 
-Route::get('/categorias', [EventCategoryController::class, 'index']);
+//Categorias
+
+Route::get('admin/categories', [CategoryController::class, 'index']) -> name('categories.index');
+Route::get('admin/categories/create', [CategoryController::class, 'create']) -> name('categories.create');
+
+Route::post('admin/categories/save', [CategoryController::class, 'save']) -> name('categories.save');
+Route::get('admin/categories/{id}/edit/', [CategoryController::class, 'edit']) -> name('categories.edit');
+Route::post('admin/categories/{id}/update', [CategoryController::class, 'update']) -> name('categories.update');
+Route::post('admin/categories/{id}/delete', [CategoryController::class, 'delete']) -> name('categories.delete');
+
+
+//Route::get('/categorias', [CategoryController::class, 'index']);
 
 Route::get('/nosotros', function () {
     return view('nosotros');

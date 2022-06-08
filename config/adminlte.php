@@ -253,10 +253,22 @@ return [
             //'label'       => 4,
             //'label_color' => 'success',
         ],
-        ['header' => 'Administrar Eventos'],
+        [
+            'text'        => 'Categorias',
+            'url'         => 'admin/categories',
+            'icon'        => 'far fa-fw fa-calendar-check',
+            //'label'       => 4,
+            //'label_color' => 'success',
+        ],
+        ['header' => 'Administrar'],
         [
             'text' => 'Crear Evento',
             'url'  => 'admin/events/create',
+            'icon' => 'fas fa-fw fa-calendar-plus',
+        ],
+        [
+            'text' => 'Crear Categoria',
+            'url'  => 'admin/categories/create',
             'icon' => 'fas fa-fw fa-calendar-plus',
         ],
         
