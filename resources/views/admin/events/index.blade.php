@@ -25,6 +25,7 @@
                             <th>Fecha Evento</th>
                             <th>Lugar Evento</th>
                             <th>Status</th>
+                            <th>Categoria</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -38,23 +39,17 @@
                             <td>{{$event->date_event}}</td>
                             <td>{{$event->place_event}}</td>
                             <td>{{$event->status}}</td>
+                            <td>{{$event->category_id}}</td>
+
                             <td>
-                                <button class="btn btn-sm btn-warning">Editar</button>
+                                <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>
                                 <button class="btn btn-sm btn-danger">Eliminar</button>
+                                
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
+                    
                 </table>
             </div>
         </div>

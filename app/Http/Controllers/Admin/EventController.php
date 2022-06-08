@@ -18,9 +18,11 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
-        
+        $categories = Category::all();
+
         return view('admin.events.index', [
-            'events' => $events
+            'events' => $events,
+            'categories' => $categories
         ]);
 
     }
@@ -57,5 +59,39 @@ class EventController extends Controller
 
         return redirect()->route('events.index');
 
+    }
+
+    public function edit($id)
+    {
+        
+        $event = Event::find($id);
+        $categories = Category::all();
+        
+        return view('admin.events.edit', [
+            'event' => $event,
+            'categories' => $categories
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $event = Event::find($id);
+
+        if($request->hasFile('img_banner')){
+            $file = $request->file('img_banner');
+            $img_name = time().'_event.'.$file->getClientOriginalExtension();
+            $destinationPath = 'images/uploads/events';
+            $uploadSuccess = $file->move($destinationPath, $img_name);
+        }
+
+        $event -> category_id = $request->category_id;
+        $event -> title = $request->title;
+        $event -> img_banner = isset($img_name) ? $img_name : $event->img_banner;
+        $event -> date_event = $request->date_event;
+        $event -> place_event = $request->place_event;
+        $event -> description = $request->description;
+        $event -> save();
+
+        return redirect()->route('events.index');
     }
 }

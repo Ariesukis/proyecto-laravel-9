@@ -22,6 +22,8 @@ Route::get('/', function () {
 });
 */
 
+//Route::get('/', [HomeController::class, 'index']);
+
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -31,8 +33,8 @@ Route::get('admin/events', [EventController::class, 'index']) -> name('events.in
 Route::get('admin/events/create', [EventController::class, 'create']) -> name('events.create');
 
 Route::post('admin/events/save', [EventController::class, 'save']) -> name('events.save');
-
-//Route::get('/', [HomeController::class, 'index']);
+Route::get('admin/events/{id}/edit/', [EventController::class, 'edit']) -> name('events.edit');
+Route::post('admin/events/{id}/update', [EventController::class, 'update']) -> name('events.update');
 
 Route::get('/categorias', [EventCategoryController::class, 'index']);
 

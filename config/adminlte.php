@@ -259,6 +259,7 @@ return [
             'url'  => 'admin/events/create',
             'icon' => 'fas fa-fw fa-calendar-plus',
         ],
+        
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
