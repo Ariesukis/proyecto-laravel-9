@@ -43,8 +43,11 @@
 
                             <td>
                                 <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>
-                                <button class="btn btn-sm btn-danger">Eliminar</button>
-                                
+                                <form action="{{route('events.delete', $event)}}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
+                                    
                             </td>
                         </tr>
                         @endforeach

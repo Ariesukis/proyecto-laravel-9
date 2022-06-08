@@ -94,4 +94,12 @@ class EventController extends Controller
 
         return redirect()->route('events.index');
     }
+
+    public function delete($id)
+    {
+        $event = Event::find($id);
+        $event -> delete();
+
+        return redirect()->route('events.index');
+    }
 }

@@ -35,6 +35,7 @@ Route::get('admin/events/create', [EventController::class, 'create']) -> name('e
 Route::post('admin/events/save', [EventController::class, 'save']) -> name('events.save');
 Route::get('admin/events/{id}/edit/', [EventController::class, 'edit']) -> name('events.edit');
 Route::post('admin/events/{id}/update', [EventController::class, 'update']) -> name('events.update');
+Route::post('admin/events/{id}/delete', [EventController::class, 'delete']) -> name('events.delete');
 
 Route::get('/categorias', [EventCategoryController::class, 'index']);
 
