@@ -6,6 +6,7 @@
 
 
 @section('banner')
+<?php if(!$banner == null){ ?>
 <div class="col-sm-12 col-md-10 banner-container text-center">
     <img src="/images/uploads/events/{{$banner->img_banner}}" class="img-fluid banner-image" alt="Banner principal">
     <div class="text-block">
@@ -15,6 +16,17 @@
         <a href="" class="btn btn-sm btn-primary-yellow rounded-12">Ver Detalle</a>
     </div>
 </div>
+<?php }else { ?>
+    <div class="col-sm-12 col-md-10 banner-container text-center">
+        <img src="/images/uploads/events/default.jpg" class="img-fluid banner-image" alt="Banner principal">
+        <div class="text-block">
+            <h4 class="text-block-title">PRUEBA</h4>
+            <p class="text-block-subtitle mb-2">prueba</p>
+            <p class="text-block-subtitle mb-2">2022-01-01</p>
+            <a href="" class="btn btn-sm btn-primary-yellow rounded-12">Ver Detalle</a>
+        </div>
+    </div>
+<?php } ?>
 @endsection
 
 @section('content')

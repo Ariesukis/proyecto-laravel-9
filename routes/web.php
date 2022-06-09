@@ -33,7 +33,6 @@ Route::get('/home', [HomeController::class, 'home'])->name('home');
 //Filtrado por categoria
 Route::post('event/filter', [HomeController::class, 'eventFilter']) -> name('eventFilter');
 
-
 //Eventos
 Route::get('admin/events', [EventController::class, 'index']) -> name('events.index');
 Route::get('admin/events/create', [EventController::class, 'create']) -> name('events.create');

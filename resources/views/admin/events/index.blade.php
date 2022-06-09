@@ -26,6 +26,7 @@
                             <th>Lugar Evento</th>
                             <th>Status</th>
                             <th>Categoria</th>
+                            <th>Principal</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -40,6 +41,12 @@
                             <td>{{$event->place_event}}</td>
                             <td>{{$event->status}}</td>
                             <td>{{$event->category->name}}</td>
+                            <td><?php if($event->is_banner == 1){ ?>
+                                    ✅
+                                <?php } else{ ?>
+                                    ✖️
+                                <?php } ?>
+                            </td>
 
                             <td>
                                 <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>

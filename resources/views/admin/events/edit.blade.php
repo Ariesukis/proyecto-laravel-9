@@ -39,7 +39,11 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <textarea class="form-control" name="description" id="description" placeholder="Descripción del Evento">{{$event->description}}"</textarea>
+                        <textarea class="form-control" name="description" id="description" placeholder="Descripción del Evento">{{$event->description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="place_event">¿Quieres hacerlo banner Principal?</label>
+                        <input type="text" class="form-control" name="is_banner" id="is_banner" value="{{$event->is_banner}}">
                     </div>
                     <div class="form-group">
                         <label>Categoria</label>

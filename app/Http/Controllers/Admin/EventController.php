@@ -77,6 +77,8 @@ class EventController extends Controller
     {
         $event = Event::find($id);
 
+        //dd($event->is_banner);
+        
         if($request->hasFile('img_banner')){
             $file = $request->file('img_banner');
             $img_name = time().'_event.'.$file->getClientOriginalExtension();
@@ -90,6 +92,8 @@ class EventController extends Controller
         $event -> date_event = $request->date_event;
         $event -> place_event = $request->place_event;
         $event -> description = $request->description;
+        $event -> is_banner = $request->is_banner;
+        
         $event -> save();
 
         return redirect()->route('events.index');

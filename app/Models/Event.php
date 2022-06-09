@@ -17,6 +17,7 @@ class Event extends Model
         'date_event',
         'place_event',
         'description',
+        'is_banner'
     ];
 
     public function category()
