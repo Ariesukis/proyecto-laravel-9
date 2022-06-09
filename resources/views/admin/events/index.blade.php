@@ -43,7 +43,7 @@
 
                             <td>
                                 <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>
-                                <form action="{{route('events.delete', $event)}}" method="POST">
+                                <form onsubmit="return confirmAction()" action="{{route('events.delete', $event)}}" method="POST">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                 </form>
@@ -66,6 +66,17 @@
 
 @section('js')
 <script>
+
+function confirmAction() {
+    var result = confirm('¿Estas seguro de eliminar este registro?');
+    if (result) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 $(document).ready(function () {
     $('#events').DataTable();
 });

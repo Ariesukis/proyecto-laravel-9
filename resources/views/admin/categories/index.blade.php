@@ -32,7 +32,7 @@
 
                             <td>
                                 <a href="{{route('categories.edit', $category)}}" class="btn btn-sm btn-warning">Editar</a>
-                                <form action="{{route('categories.delete', $category)}}" method="POST">
+                                <form onsubmit="return confirmAction()" action="{{route('categories.delete', $category)}}" method="POST">
                                     @csrf
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                 </form>
@@ -55,6 +55,16 @@
 
 @section('js')
 <script>
+
+function confirmAction() {
+    var result = window.confirm('¿Estas seguro de eliminar este registro?');
+    if (result) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 $(document).ready(function () {
     $('#events').DataTable();
 });

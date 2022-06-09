@@ -34,6 +34,7 @@
         </div>
         <div class="col-auto m-1">
             <select class="form-select" id="category-id">
+                <option value="" selected disabled>Selecciona una Categoria</option>
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{ $category->name }}</option>
                 @endforeach
@@ -95,7 +96,7 @@
                 events.forEach(event => {
                     newGrid += `
                     <div class="col-md-4 col-sm-12 text-center event mb-4">
-                        <img src="/images/uploads/events/{{$event->img_banner}}" class="img-fluid" alt="Norway" style="width:100%; height:100%; object-fit: cover;">
+                        <img src="/images/uploads/events/${event.img_banner}" class="img-fluid" alt="Norway" style="width:100%; height:100%; object-fit: cover;">
                         <div class="text-block">
                             <h4 class="text-block-title">${event.title}</h4>
                             <p class="text-block-p mb-0 fw-400">${event.date_event}</p>
