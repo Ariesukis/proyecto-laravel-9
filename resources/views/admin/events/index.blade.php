@@ -39,7 +39,7 @@
                             <td>{{$event->date_event}}</td>
                             <td>{{$event->place_event}}</td>
                             <td>{{$event->status}}</td>
-                            <td>{{$event->category_id}}</td>
+                            <td>{{$event->category->name}}</td>
 
                             <td>
                                 <a href="{{route('events.edit', $event)}}" class="btn btn-sm btn-warning">Editar</a>

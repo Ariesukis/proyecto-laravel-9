@@ -30,6 +30,11 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
+//Filtrado por categoria
+Route::post('event/filter', [HomeController::class, 'eventFilter']) -> name('eventFilter');
+
+
+//Eventos
 Route::get('admin/events', [EventController::class, 'index']) -> name('events.index');
 Route::get('admin/events/create', [EventController::class, 'create']) -> name('events.create');
 
@@ -39,7 +44,6 @@ Route::post('admin/events/{id}/update', [EventController::class, 'update']) -> n
 Route::post('admin/events/{id}/delete', [EventController::class, 'delete']) -> name('events.delete');
 
 //Categorias
-
 Route::get('admin/categories', [CategoryController::class, 'index']) -> name('categories.index');
 Route::get('admin/categories/create', [CategoryController::class, 'create']) -> name('categories.create');
 
@@ -47,6 +51,9 @@ Route::post('admin/categories/save', [CategoryController::class, 'save']) -> nam
 Route::get('admin/categories/{id}/edit/', [CategoryController::class, 'edit']) -> name('categories.edit');
 Route::post('admin/categories/{id}/update', [CategoryController::class, 'update']) -> name('categories.update');
 Route::post('admin/categories/{id}/delete', [CategoryController::class, 'delete']) -> name('categories.delete');
+
+
+
 
 
 //Route::get('/categorias', [CategoryController::class, 'index']);

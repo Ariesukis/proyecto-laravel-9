@@ -34,14 +34,31 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $events = Event::all();
+
+        //definir banner principal
+        $banner = Event::where('is_banner', '=', '1')->first();
         //dd ($categories);
 
         // eventos -> una categoria
         // categoria -> muchos eventos
-
         return view('events', [
             'categories' => $categories,
+            'events' => $events,
+            'banner' => $banner
+        ]);
+    }
+
+    public function eventFilter(Request $request){
+        //dd($request->category_id);
+
+        $category_id = $request->category_id;
+        $events = Event::where('category_id', '=', $category_id)->get();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Eventos filtrados',
             'events' => $events
         ]);
+        
     }
 }
